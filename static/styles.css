@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.container {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.chat-box {
+    flex-grow: 1;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 20px;
+    max-width: 80%;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.message.user {
+    background-color: #c7d9ff;
+    align-self: flex-end;
+}
+
+.message.bot {
+    background-color: #e1ffc7;
+    align-self: flex-start;
+}
+
+input[type="text"] {
+    width: calc(100% - 110px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+#resume-upload {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#resume-input {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.feedback-form {
+    width: 100%;
+    padding: 10px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+.feedback-form iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+/* Modal styles */
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 640px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 600px) {
+    body {
+        padding: 0;
+        height: 100vh;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .container {
+        border-radius: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        /* Significantly increase heading size */
+        padding: 20px;
+        margin: 0;
+    }
+
+    .chat-box {
+        height: auto;
+        padding: 20px;
+        /* Increase padding for better spacing */
+        margin: 0;
+        max-width: 100%;
+        font-size: 1.5em;
+        /* Significantly increase font size in chat */
+    }
+
+    .message {
+        padding: 20px;
+        /* Increase padding for messages */
+        font-size: 1.5em;
+        /* Increase message font size */
+    }
+
+    input[type="text"] {
+        margin: 0;
+        width: calc(100% - 150px);
+        /* Adjusted width to account for larger buttons */
+        padding: 20px;
+        /* Increase padding for input field */
+        border-radius: 8px;
+        /* Increase border radius for a more tactile feel */
+        font-size: 1.5em;
+        /* Increase font size for better readability */
+        box-sizing: border-box;
+    }
+
+    button {
+        border-radius: 8px;
+        /* Increase button border radius */
+        margin-left: 15px;
+        /* Increase margin for better spacing */
+        width: 60px;
+        /* Increase button size */
+        height: 60px;
+        /* Increase button size */
+        font-size: 1.5em;
+        /* Increase icon size */
+    }
+
+    #resume-upload {
+        width: 60px;
+        /* Increase size of the upload button */
+        height: 60px;
+    }
+
+    .feedback-form {
+        position: static;
+        box-shadow: none;
+        font-size: 1.5em;
+        /* Increase font size for better readability */
+        padding: 20px;
+    }
+}

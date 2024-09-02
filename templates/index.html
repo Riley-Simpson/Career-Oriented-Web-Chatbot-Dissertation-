@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+    <!-- Consent Modal -->
+    <div id="consent-modal" class="modal" role="dialog" aria-labelledby="consent-modal-title"
+        aria-describedby="consent-modal-description" aria-modal="true">
+        <div class="modal-content">
+            <button class="close" aria-label="Close consent form" onclick="closeModal()">&times;</button>
+            <h2 id="consent-modal-title">Participant Information Sheet and Consent Form</h2>
+            <p id="consent-modal-description">Please read the following information and provide your consent to proceed.
+            </p>
+            <iframe title="Consent Form" width="100%" height="480px"
+                src="[MICROSOFT FORM - CONSENT FORM AND PARTICIPANT INFORMATION SHEET HERE]"
+                frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh"
+                allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
+            </iframe>
+            <button id="consent-button" onclick="checkGoogleFormSubmission()">I Agree</button>
+        </div>
+    </div>
+
+    <div class="container" id="main-content">
+        <h1>Chat with Career Chatbot</h1>
+        <div class="chat-box" id="chat-box">
+            <div id="messages" aria-live="polite" role="log"></div>
+            <div id="loading-spinner" class="spinner" aria-hidden="true"></div>
+        </div>
+        <div class="footer">
+            <!-- Resume Upload Button -->
+            <div id="resume-upload">
+                <input type="file" id="resume-input" accept=".pdf" aria-label="Upload your resume">
+                <button class="resume-button" aria-label="Upload Resume"><i class="fa-solid fa-file"></i></button>
+            </div>
+
+            <!-- Text Input -->
+            <input type="text" id="query-input" placeholder="Type your query here..." aria-label="Query input">
+
+            <!-- Send Button -->
+            <button id="send-button" onclick="sendQuery()">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Feedback Form Section-->
+    <div class="feedback-form" id="feedback-form">
+        <iframe width="100%" height="auto"
+            src="[MICROSOFT - FEEDBACK FORM HERE]"
+            frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100%"
+            allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen>
+        </iframe>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="static/scripts.js"></script>
+</body>
+
+</html>
